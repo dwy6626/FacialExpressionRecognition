@@ -42,7 +42,7 @@ def predict_data_gen():
     from data import Jaffe
     import numpy as np
     model = CNN3()
-    model.load_weights('../models/cnn3_best_weights.h5')
+    model.load_weights('models/cnn3_best_weights.h5')
     expression, x_test, y_test = Jaffe().gen_train()
     pred = []
     x_test = np.squeeze(x_test, axis=-1)
@@ -65,7 +65,7 @@ def predict_no_gen():
     from data import Jaffe
     import numpy as np
     model = CNN3()
-    model.load_weights('../models/cnn3_best_weights.h5')
+    model.load_weights('models/cnn3_best_weights.h5')
     expression, x_test, y_test = Jaffe().gen_train()
     pred = model.predict(x_test)
     pred = np.argmax(pred, axis=1)
